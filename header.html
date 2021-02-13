@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang=''>
+<head>
+   <meta charset='utf-8'>
+   <link rel="stylesheet" href="Design/styles.css">
+   <link rel="icon" href="Image/icon.png" type="image/ico">
+   
+   <title>K-TRICKS</title>
+   
+
+</head>
+<body>
+
+<div id='cssmenu'>
+<ul>
+   <li><a href='#'><span>Home</span></a></li>
+   <li class='has-sub'><a href='#'><span>Database Credentials</span></a>
+      <ul>
+         <li class='has-sub'><a href='#'><span>Core DB</span></a>
+         </li>
+            
+         <li class='has-sub'><a href='#'><span>Store DB</span></a>
+          
+         </li>
+		 <li class='has-sub'><a href='#'><span>UAT DB</span></a>
+          
+         </li>
+		 
+		  <li class='has-sub'><a href='#'><span>MySQL DB</span></a>
+          
+         </li>
+		 
+		 </li>
+		 
+		  <li class='has-sub'><a href='#'><span>MSSQL DB</span></a>
+          
+         </li>
+		 
+      </ul>
+   </li>
+   <li><a id="myBtn" href='#'><span>Add Target</span></a></li>
+   <li><a href='uptimelist.php'><span>DB Uptime Report</span></a></li>
+      <li class='last'><a href='#'><span>Error Login Logs</span></a></li>
+	  <li class='last'><a href='backupstatus_header.html'><span>Backup Status</span></a></li>
+	  <li class='last'><a href='listofPassword.php'><span>User Credentials</span></a></li>
+	  <li class='last'><a href='#'><span>Log out</span></a></li>
+	
+	  <li class='last'><a href='#'><span>
+<!-- <input class='formsearchtxtDesign' type="text" id="myInput" onkeyup="myFunction()" placeholder="Search by SID ..." title="Type in a name"> -->
+</a></li>
+</ul>
+</div>
+
+<br><br>
+
+
+
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h2>Add Database Credentials</h2>
+    </div>
+    <div class="modal-body">
+      <form action="/action_page.php">
+	  
+	  <label for="">Store Code</label>
+    <input class='formAddtxtDesignSCODE' type="text" id="fname" name="firstname" placeholder="Store code..">
+	
+	  <label for="fname">Store Name</label>
+    <input class='formAddtxtDesign' type="text" id="fname" name="firstname" placeholder="Store name..">
+	
+	<label for="fname">IP ADD</label>
+    <input class='formAddtxtDesign' type="text" id="fname" name="firstname" placeholder="Ip Address..">
+	
+	<label for="fname">SID</label>
+    <input class='formAddtxtDesignSCODE' type="text" id="fname" name="firstname" placeholder="Your SID..">
+	
+	</br></br>
+	
+
+	  <label for="">Username</label>
+    <input class='formAddtxtDesignSCODE' type="text" id="fname" name="firstname" placeholder="Store code..">
+	
+	  <label for="fname">Password</label>
+    <input class='formAddtxtDesign' type="password" name="firstname" placeholder="Store name.." id="myPInput">
+	<input type="checkbox" onclick="myPFunction()">
+	
+	<label for="fname">Category</label>
+	<select  class='formAddtxtDesign' >
+  <option class='formAddtxtDesign' value="volvo">Store</option>
+  <option class='formAddtxtDesign' value="saab">Core</option>
+  <option class='formAddtxtDesign' value="mercedes">Uat</option>
+	</select>
+	
+	<label for="fname">Type</label>
+    <select  class='formAddtxtDesignSCODE' >
+  <option class='formAddtxtDesignSCODE' value="volvo">OS</option>
+  <option class='formAddtxtDesignSCODE' value="saab">DB</option>
+	</select>
+	
+	
+	
+	
+  
+   
+  </form>
+    </div>
+    <div class="modal-footer">
+      <input class='formAddDBDesign' type="submit" value="SUBMIT" >
+    </div>
+  </div>
+
+</div>
+
+
+
+
+
+<script>
+function myFunction() {
+  var input, filter, table, tr, td, i;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[2];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+
+
+
+
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+
+function myPFunction() {
+    var x = document.getElementById("myPInput");
+    if (x.type === "password") {
+        x.type = "text";
+    } else {
+        x.type = "password";
+    }
+}
+
+</script>
+
+</body>
+<html>
